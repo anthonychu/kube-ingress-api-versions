@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: api-version2
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: api-version2
+    spec:
+      containers:
+      - name: api-version2
+        image: anthonychu/demo-kube-ingress-versions:2
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /api/info
+            port: 80
+          initialDelaySeconds: 3
+          periodSeconds: 3
