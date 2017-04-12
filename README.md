@@ -1,0 +1,1 @@
+Source code for: http://anthonychu.ca/post/api-versioning-kubernetes-nginx-ingress
